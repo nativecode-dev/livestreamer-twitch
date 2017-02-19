@@ -1,0 +1,7 @@
+.vscode/
+lib/
+node_modules/
+
+*.tgz
+npm-debug.log
+npm-shrinkwrap.log

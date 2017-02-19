@@ -1,0 +1,27 @@
+{
+  "debug": {
+    "js": {
+      "title": "js"
+    },
+    "json": {
+      "title": "json"
+    }
+  },
+  "destination": {
+    "lib": "lib"
+  },
+  "plugins": {
+    "babel": {
+      "presets": "es2015"
+    },
+    "mocha": {
+      "reporter": "spec"
+    }
+  },
+  "sources": {
+    "clean": ["lib/", "*.tgz"],
+    "js": ["src/**/*.js"],
+    "json": ["src/**/*.json"],
+    "tests": ["tests/**/when_*.js"]
+  }
+}

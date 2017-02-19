@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "name": "livestreamer-twitch",
-  "version": "0.4.0",
+  "version": "0.1.0",
   "bugs": {
     "email": "support@nativecode.com",
     "url": "https://github.com/nativecode-dev/livestreamer-twitch/issues"

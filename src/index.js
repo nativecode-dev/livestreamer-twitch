@@ -14,12 +14,16 @@ const available = (config, channel) => {
   if (options.enabled && running[channel] === undefined) {
     debug('streaming -> %s', channel)
 
+    console.log('streaming: %s', channel)
+
     running[channel] = new TwitchStreamer(channel).start(options.quality).then(() => {
       debug('completed streaming -> %s', channel)
       delete running[channel]
+      console.log('completed: %s', channel)
     }).catch(() => {
       debug('error while streaming -> %s', channel)
       delete running[channel]
+      console.log('errored: %s', channel)
     })
 
   } else {

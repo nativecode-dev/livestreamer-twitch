@@ -1,6 +1,5 @@
-# livestreamer
+# livestreamer-watch
 
-[![npm](https://img.shields.io/npm/v/livestreamer-watch.svg?style=flat-square)](https://www.npmjs.com/package/livestreamer-watch)
 [![Travis](https://img.shields.io/travis/nativecode-dev/livestreamer-watch.svg?style=flat-square&label=travis)](https://travis-ci.org/nativecode-dev/livestreamer-watch)
 [![TeamCity](https://img.shields.io/teamcity/https/build.nativecode.com/s/livestreamerwatch_continuous.svg?style=flat-square&label=teamcity)](https://build.nativecode.com/viewType.html?buildTypeId=livestreamerwatch_continuous&guest=1)
 [![David](https://img.shields.io/david/nativecode-dev/livestreamer-watch.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/livestreamer-watch)

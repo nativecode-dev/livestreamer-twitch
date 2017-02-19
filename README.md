@@ -1,14 +1,14 @@
 # livestreamer
 
-[![npm](https://img.shields.io/npm/v/livestreamer-twitch.svg?style=flat-square)](https://www.npmjs.com/package/livestreamer-twitch)
-[![Travis](https://img.shields.io/travis/nativecode-dev/livestreamer-twitch.svg?style=flat-square&label=travis)](https://travis-ci.org/nativecode-dev/livestreamer-twitch)
-[![TeamCity](https://img.shields.io/teamcity/https/build.nativecode.com/s/livestreamertwitch_continuous.svg?style=flat-square&label=teamcity)](https://build.nativecode.com/viewType.html?buildTypeId=livestreamertwitch_continuous&guest=1)
-[![David](https://img.shields.io/david/nativecode-dev/livestreamer-twitch.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/livestreamer-twitch)
-[![David](https://img.shields.io/david/dev/nativecode-dev/livestreamer-twitch.svg?style=flat-square&label=devdeps)](https://www.npmjs.com/package/livestreamer-twitch)
+[![npm](https://img.shields.io/npm/v/livestreamer-watch.svg?style=flat-square)](https://www.npmjs.com/package/livestreamer-watch)
+[![Travis](https://img.shields.io/travis/nativecode-dev/livestreamer-watch.svg?style=flat-square&label=travis)](https://travis-ci.org/nativecode-dev/livestreamer-watch)
+[![TeamCity](https://img.shields.io/teamcity/https/build.nativecode.com/s/livestreamerwatch_continuous.svg?style=flat-square&label=teamcity)](https://build.nativecode.com/viewType.html?buildTypeId=livestreamerwatch_continuous&guest=1)
+[![David](https://img.shields.io/david/nativecode-dev/livestreamer-watch.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/livestreamer-watch)
+[![David](https://img.shields.io/david/dev/nativecode-dev/livestreamer-watch.svg?style=flat-square&label=devdeps)](https://www.npmjs.com/package/livestreamer-watch)
 
 # Installation
 ```
-npm install --save livestreamer-twitch
+npm install --save livestreamer-watch
 ```
 
 # License

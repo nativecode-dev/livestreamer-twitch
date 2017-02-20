@@ -1,0 +1,12 @@
+{
+  "twitch": {
+    "api": {
+      "apiVersion": "3",
+      "baseUrl": "https://api.twitch.tv/kraken/",
+      "clientID": null,
+      "oauth": null,
+      "ua": "Livestreamer Watch"
+    },
+    "channels": {}
+  }
+}

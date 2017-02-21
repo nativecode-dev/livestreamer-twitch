@@ -46,27 +46,31 @@ const filter = (channel, config, stream) => {
 }
 
 const scan = () => {
-  debug('checking for live streams')
-  if (fs.existsSync(configpath)) {
-    const config = require(configpath)
-    Object.keys(config.twitch.channels).forEach(channel => {
-      debug('checking channel -> %s', channel)
-      if (ignored.includes(channel) === false) {
-        twitch(`streams/${channel}`, config.twitch.api, (error, response) => {
-          if (error) {
-            ignored.push(channel)
-            debug('error -> %s', channel)
-            return
-          }
+  try {
+    debug('checking for live streams')
+    if (fs.existsSync(configpath)) {
+      const config = require(configpath)
+      Object.keys(config.twitch.channels).forEach(channel => {
+        debug('checking channel -> %s', channel)
+        if (ignored.includes(channel) === false) {
+          twitch(`streams/${channel}`, config.twitch.api, (error, response) => {
+            if (error) {
+              ignored.push(channel)
+              debug('error -> %s', channel)
+              return
+            }
 
-          if (response.stream && filter(channel, config.twitch, response.stream) === false) {
-            available(config, channel)
-          }
-        })
-      }
-    })
-  } else {
-    console.log('No configuration found at %s.', configpath)
+            if (response.stream && filter(channel, config.twitch, response.stream) === false) {
+              available(config, channel)
+            }
+          })
+        }
+      })
+    } else {
+      console.log('No configuration found at %s.', configpath)
+    }
+  } catch (e) {
+    console.error(e)
   }
 
   debug('checking again in 30 seconds')

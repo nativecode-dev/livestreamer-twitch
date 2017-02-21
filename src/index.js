@@ -1,4 +1,4 @@
-const debug = require('debug')('nativecode:livestreamer-twitch')
+const debug = require('debug')('nativecode:livestreamer-watch')
 const fs = require('fs')
 const locations = require('common-locations')('livestreamer')
 const twitch = require('twitch.tv')

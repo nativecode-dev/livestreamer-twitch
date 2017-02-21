@@ -25,7 +25,7 @@ const available = (config, channel) => {
       }).catch((e) => {
         debug('error while streaming -> %s', channel)
         delete running[channel]
-        console.error('errored: %s -> e', channel, e)
+        console.error('errored: %s -> %O', channel, e)
       })
 
   } else {
@@ -52,19 +52,16 @@ const scan = () => {
       const config = require(configpath)
       Object.keys(config.twitch.channels).forEach(channel => {
         debug('checking channel -> %s', channel)
-        if (ignored.includes(channel) === false) {
-          twitch(`streams/${channel}`, config.twitch.api, (error, response) => {
-            if (error) {
-              ignored.push(channel)
-              debug('error -> %s', channel)
-              return
-            }
+        twitch(`streams/${channel}`, config.twitch.api, (error, response) => {
+          if (error) {
+            debug('response error -> %s', channel)
+            return
+          }
 
-            if (response.stream && filter(channel, config.twitch, response.stream) === false) {
-              available(config, channel)
-            }
-          })
-        }
+          if (response.stream && filter(channel, config.twitch, response.stream) === false) {
+            available(config, channel)
+          }
+        })
       })
     } else {
       console.log('No configuration found at %s.', configpath)

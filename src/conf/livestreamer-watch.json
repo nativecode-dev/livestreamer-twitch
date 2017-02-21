@@ -7,6 +7,9 @@
       "oauth": null,
       "ua": "Livestreamer Watch"
     },
-    "channels": {}
+    "channels": {},
+    "ignore": {
+      "keywords": []
+    }
   }
 }

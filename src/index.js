@@ -25,7 +25,7 @@ const available = (config, channel) => {
       }).catch((e) => {
         debug('error while streaming -> %s', channel)
         delete running[channel]
-        console.error('errored: %s -> %O', channel, e)
+        console.error('errored: %s ->', channel, e)
       })
 
   } else {

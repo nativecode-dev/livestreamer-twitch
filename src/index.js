@@ -1,6 +1,7 @@
 const debug = require('debug')('nativecode:livestreamer-watch')
 const fs = require('fs')
 const locations = require('common-locations')('livestreamer')
+const process = require('process')
 const twitch = require('twitch.tv')
 
 const TwitchStreamer = require('livestreamer').TwitchStreamer
@@ -8,6 +9,10 @@ const configpath = locations.config.local('livestreamer.json')
 
 let running = {}
 let ignored = []
+
+process.on('uncaughtException', error => {
+  console.error(error)
+})
 
 const available = (config, channel) => {
   const options = config.twitch.channels[channel]

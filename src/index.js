@@ -1,6 +1,8 @@
 const debug = require('debug')('nativecode:livestreamer-watch')
+const defaults = require('./conf/defaults')
 const fs = require('fs')
 const locations = require('common-locations')('livestreamer')
+const merge = require('merge').recursive
 const process = require('process')
 const twitch = require('twitch.tv')
 
@@ -54,7 +56,9 @@ const scan = () => {
   try {
     debug('checking for live streams')
     if (fs.existsSync(configpath)) {
-      const config = require(configpath)
+      const config = merge(true, defaults, JSON.parse(fs.readFileSync(configpath)))
+      debug('config -> %O', config)
+
       Object.keys(config.twitch.channels).forEach(channel => {
         debug('checking channel -> %s', channel)
         twitch(`streams/${channel}`, config.twitch.api, (error, response) => {
@@ -68,15 +72,15 @@ const scan = () => {
           }
         })
       })
+
+      setTimeout(scan, config.interval)
     } else {
       console.log('No configuration found at %s.', configpath)
+      setTimeout(scan, 5000)
     }
   } catch (e) {
     console.error(e)
   }
-
-  debug('checking again in 30 seconds')
-  setTimeout(scan, 30000)
 }
 
 console.log('starting livestreamer watch')

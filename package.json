@@ -5,15 +5,15 @@
   "license": "MIT",
   "main": "lib/index.js",
   "name": "livestreamer-watch",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "bugs": {
     "email": "support@nativecode.com",
     "url": "https://github.com/nativecode-dev/livestreamer-watch/issues"
   },
   "dependencies": {
-    "common-locations": "^2.3.3",
+    "common-locations": "^2.3.5",
     "debug": "^2.6.1",
-    "livestreamer": "^0.7.6",
+    "livestreamer": "^0.8.0",
     "twitch.tv": "^2.1.0"
   },
   "devDependencies": {

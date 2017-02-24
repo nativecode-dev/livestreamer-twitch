@@ -1,4 +1,5 @@
 const gulp = require('gulp')
+const os = require('os')
 const plugins = require('gulp-load-plugins')()
 
 const $ = plugins.configly(__dirname, 'package.json')
@@ -24,6 +25,14 @@ gulp.task('clean', () => {
   return gulp.src($.sources.clean)
     .pipe(plugins.debug())
     .pipe(plugins.clean())
+})
+
+gulp.task('compile', ['build'], () => {
+  const exename = os.platform() === 'win32' ? 'livestreamer-watch.exe' : 'livestreamer-watch'
+  const command = `nexe -i lib/index.js -o bin/${exename} -t .build`
+
+  return plugins.run(command, $.plugins.nexe).exec()
+    .pipe(gulp.dest('output'))
 })
 
 gulp.task('test', ['build'], () => {

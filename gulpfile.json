@@ -16,10 +16,13 @@
     },
     "mocha": {
       "reporter": "spec"
+    },
+    "nexe": {
+      "verbosity": 3
     }
   },
   "sources": {
-    "clean": [".build/", "lib/", "*.tgz"],
+    "clean": [".build/", "bin/", "lib/", "*.tgz"],
     "js": ["src/**/*.js"],
     "json": ["src/**/*.json"],
     "tests": ["tests/**/when_*.js"]

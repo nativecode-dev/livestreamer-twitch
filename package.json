@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "name": "livestreamer-watch",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "bugs": {
     "email": "support@nativecode.com",
     "url": "https://github.com/nativecode-dev/livestreamer-watch/issues"
@@ -28,7 +28,8 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-mocha": "^3.0.1",
     "gulp-sourcemaps": "^2.4.1",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "nexe": "^1.1.2"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -43,6 +44,7 @@
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
+    "package": "npm test && nexe -i lib/index.js -o bin/livestreamer-watch -t .build",
     "prepublish": "gulp clean && gulp test",
     "prestart": "gulp build",
     "pretest": "gulp clean",

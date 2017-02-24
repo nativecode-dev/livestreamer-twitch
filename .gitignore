@@ -1,6 +1,9 @@
+.build/
 .vscode/
+bin/
 lib/
 node_modules/
+tmp/
 
 *.tgz
 npm-debug.log
